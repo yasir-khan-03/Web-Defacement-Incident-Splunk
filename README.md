@@ -4,7 +4,7 @@
 To understand how SOC analysts investigate a website defacement incident using SIEM logs.
 
 ## Scenario
-Wayne Enterprises reported that their website www.imreallynotbatman.com was defaced by attackers displaying an unauthorized message.
+Wayne Enterprises reported that their website **www.imreallynotbatman.com** was defaced by attackers displaying an unauthorized message.
 
 ## Tool Used
 - Splunk (SIEM)
@@ -13,9 +13,13 @@ Wayne Enterprises reported that their website www.imreallynotbatman.com was defa
 - BOTS v1 Dataset
 
 ## Investigation Steps
-1. Reviewed web traffic related to the affected domain
-2. Analysed HTTP logs for suspicious activity
-3. Identified repeated access attempts from suspicious IP addresses
-4. Reviewed the timeline of events around the defacement
+- Reviewed web traffic related to the affected domain
+- Analysed HTTP logs for suspicious activity
+- Identified repeated access attempts from suspicious IP addresses
+- Reviewed the timeline of events around the defacement
 
 ## Sample Splunk Searches
+```spl
+index=botsv1 imreallynotbatman
+index=botsv1 sourcetype=stream:http
+index=botsv1 | stats count by src_ip
