@@ -23,3 +23,11 @@ Wayne Enterprises reported that their website **www.imreallynotbatman.com** was 
 index=botsv1 imreallynotbatman
 index=botsv1 sourcetype=stream:http
 index=botsv1 | stats count by src_ip
+## Findings
+- Suspicious HTTP traffic was observed targeting the affected domain
+- Repeated requests were identified from the same source IP address
+- The activity indicates possible unauthorized access leading to website defacement
+## Outcome
+This project helped me understand how SOC analysts investigate website defacement incidents using SIEM tools like Splunk by analysing logs and identifying suspicious activity.
+
+
